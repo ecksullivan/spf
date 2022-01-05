@@ -1099,6 +1099,23 @@ html {
 .aspect-h-9 {
   --tw-aspect-h: 9;
 }
+.aspect-w-1 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 1;
+}
+.aspect-w-1 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.aspect-h-1 {
+  --tw-aspect-h: 1;
+}
 .fluid-container {
   width: 100%;
   max-width: 1280px;
@@ -1507,6 +1524,9 @@ html {
 .max-w-lg {
   max-width: 32rem;
 }
+.max-w-2xl {
+  max-width: 42rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1621,6 +1641,13 @@ html {
 }
 .gap-y-20 {
   row-gap: 5rem;
+}
+.gap-y-10 {
+  row-gap: 2.5rem;
+}
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1882,6 +1909,10 @@ html {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 .p-2 {
   padding: 0.5rem;
@@ -2537,6 +2568,9 @@ html {
 .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;
 }
+.group:hover .group-hover\:opacity-75 {
+  opacity: 0.75;
+}
 @media (prefers-reduced-motion: no-preference) {
 
   .motion-safe\:transition {
@@ -2574,6 +2608,26 @@ html {
   }
 }
 @media (min-width: 640px) {
+
+  .sm\:aspect-w-2 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 2;
+  }
+
+  .sm\:aspect-w-2 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .sm\:aspect-h-3 {
+    --tw-aspect-h: 3;
+  }
 
   .sm\:absolute {
     position: absolute;
@@ -2648,6 +2702,10 @@ html {
     transform: var(--tw-transform);
   }
 
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .sm\:items-start {
     align-items: flex-start;
   }
@@ -2696,6 +2754,11 @@ html {
   .sm\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .sm\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .sm\:pt-10 {
@@ -2961,6 +3024,10 @@ html {
     max-width: 64rem;
   }
 
+  .lg\:max-w-7xl {
+    max-width: 80rem;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3039,6 +3106,11 @@ html {
 
   .xl\:-mr-20 {
     margin-right: -5rem;
+  }
+
+  .xl\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
   }
 
   .xl\:px-6 {
