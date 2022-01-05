@@ -1,0 +1,166 @@
+{{#
+	@name Layout
+	@desc The default layout file.
+#}}
+
+<!-- /layout.antlers.html -->
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <link rel="stylesheet" href="{{ mix src='css/site.css' }}">
+        <script src="{{ mix src='/js/site.js' }}" defer></script>
+
+        {{# Replace the following line with the SEO Pro or Aardvark SEO tag if you want to use an addon for SEO. Also remove the seo section in you page blueprint.#}}
+        {{ partial:snippets/seo }}
+
+        {{ partial:snippets/browser_appearance }}
+    </head>
+    <body class="flex flex-col min-h-screen bg-white selection:bg-primary selection:text-white">
+        {{ partial:snippets/noscript }}
+        {{ partial:navigation/skip_to_content }}
+ 
+
+        {{# Remove the following line if you want to use an addon for SEO. #}}
+        {{ yield:seo_body }}
+
+<!--
+<nav class="bg-purpledark">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+       
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0 flex items-center">
+            <img class="block lg:hidden h-8 w-auto" src="/assets/spf-logo.png" alt="LWB Street Painting Festival">
+            <img class="hidden lg:block h-8 w-auto" src="/assets/spf-logo.png" alt="LWB Street Painting Festival">
+          </div>
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-4">
+                <a href="#information" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Information</a>
+  
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sponsorship</a>
+  
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Volunteers</a>
+              
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mainstage</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  
+   
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Information</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sponsorship</a>
+  
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Volunteers</a>
+  
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Mainstage</a>
+  
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>-->
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative bg-purpledark">
+    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+      <div class="pr-16 sm:text-center sm:px-16">
+        <p class="font-medium text-white">
+          <span class="md:hidden">
+            CALLING ALL STREET PAINTERS
+           
+          </span>
+          <span class="hidden md:inline">
+            The 2022 Street Painting Festival artist’s application form is now available
+          </span>
+          <span class="block sm:ml-2 sm:inline-block">
+            <a href="#" class="text-white font-bold underline"> Learn more <span aria-hidden="true">&rarr;</span></a>
+          </span>
+        </p>
+      </div>
+      <div class="absolute inset-y-0 right-0 pt-1 pr-1 flex items-start sm:pt-1 sm:pr-2 sm:items-start">
+        <button type="button" class="flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white">
+          <span class="sr-only">Dismiss</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+        {{ partial:hero/spf }}
+        {{ template_content }}
+        {{ partial:layout/footer }}
+
+        
+<script>
+    function beer() {
+        return {
+            seconds: '00',
+            minutes: '00',
+            hours: '00',
+            days: '00',
+            distance: 0,
+            countdown: null,
+            beerTime: new Date('February 26, 2022 07:00:00').getTime(),
+            now: new Date().getTime(),
+            start: function() {
+                this.countdown = setInterval(() => {
+                    // Calculate time
+                    this.now = new Date().getTime();
+                    this.distance = this.beerTime - this.now;
+                    // Set Times
+                    this.days = this.padNum( Math.floor(this.distance / (1000*60*60*24)) );
+                    this.hours = this.padNum( Math.floor((this.distance % (1000*60*60*24)) / (1000*60*60)) );
+                    this.minutes = this.padNum( Math.floor((this.distance % (1000*60*60)) / (1000*60)) );
+                    this.seconds = this.padNum( Math.floor((this.distance % (1000*60)) / 1000) );
+                    // Stop
+                    if (this.distance < 0) {
+                        clearInterval(this.countdown);
+                        this.days = '00';
+                        this.hours = '00';
+                        this.minutes = '00';
+                        this.seconds = '00';
+                    }
+                },100);
+            },
+            padNum: function(num) {
+                var zero = '';
+                for (var i = 0; i < 2; i++) {
+                    zero += '0';
+                }
+                return (zero + num).slice(-2);
+            }
+        }
+    }
+    </script>
+
+
+    </body>
+</html>
+<!-- End: /layout.antlers.html -->
