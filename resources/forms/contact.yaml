@@ -2,7 +2,7 @@ title: Contact
 honeypot: fax
 email:
   -
-    to: ksullivan@lakeworthbeachfl.gov
+    to: lbennett@lakeworthbeachfl.gov
     from: noreply@lakeworthbeachfl.gov
     reply_to: '{{ email }}'
     subject: 'Contact Form - LWB Street Painting Festival'
