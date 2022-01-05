@@ -604,22 +604,7 @@
         </div>
     </div>
 </div>
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+
 <div class="relative bg-white" id="contactus">
     <div class="absolute inset-0">
         <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
@@ -681,10 +666,11 @@
         </div>
         <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
             <div class="max-w-lg mx-auto lg:max-w-none">
-                <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+                {{ form:contact }}
+                <div class="grid grid-cols-1 gap-y-6">
                     <div>
-                        <label for="full-name" class="sr-only">Full name</label>
-                        <input type="text" name="full-name" id="full-name" autocomplete="name"
+                        <label for="name" class="sr-only">Full name</label>
+                        <input type="text" name="name" id="name" autocomplete="name"
                             class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                             placeholder="Full name">
                     </div>
@@ -701,8 +687,8 @@
                             placeholder="Phone">
                     </div>
                     <div>
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" name="message" rows="4"
+                        <label for="message_body" class="sr-only">Message</label>
+                        <textarea id="message_body" name="message_body" rows="4"
                             class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border border-gray-300 rounded-md"
                             placeholder="Message"></textarea>
                     </div>
@@ -712,7 +698,8 @@
                             Submit
                         </button>
                     </div>
-                </form>
+                </div>
+                {{ /form:contact }}
             </div>
         </div>
     </div>

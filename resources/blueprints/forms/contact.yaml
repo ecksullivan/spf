@@ -17,20 +17,19 @@ sections:
           validate: required|email
           localizable: true
       -
+        handle: phone
+        field:
+          input_type: text
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
         handle: message_body
         field:
           display: Message
           type: textarea
           validate: required
           localizable: true
-      -
-        handle: consent
-        field:
-          inline: false
-          type: checkboxes
-          listable: hidden
-          display: Consent
-          validate:
-            - required
-          options:
-            'yes': 'I agree that my submitted data is being collected and stored.'
