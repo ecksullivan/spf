@@ -1406,6 +1406,15 @@ html {
 .h-4 {
   height: 1rem;
 }
+.h-36 {
+  height: 9rem;
+}
+.h-24 {
+  height: 6rem;
+}
+.h-28 {
+  height: 7rem;
+}
 .h-12 {
   height: 3rem;
 }
@@ -1429,15 +1438,6 @@ html {
 }
 .h-32 {
   height: 8rem;
-}
-.h-24 {
-  height: 6rem;
-}
-.h-36 {
-  height: 9rem;
-}
-.max-h-24 {
-  max-height: 6rem;
 }
 .max-h-12 {
   max-height: 3rem;
@@ -1983,6 +1983,9 @@ html {
 .pl-4 {
   padding-left: 1rem;
 }
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2169,6 +2172,10 @@ html {
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
@@ -2358,9 +2365,6 @@ html {
 }
 .last\:mb-0:last-child {
   margin-bottom: 0px;
-}
-.hover\:h-60:hover {
-  height: 15rem;
 }
 .hover\:h-48:hover {
   height: 12rem;
