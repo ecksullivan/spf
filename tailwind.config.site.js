@@ -36,6 +36,9 @@ module.exports = {
       purpledark: {
         DEFAULT: '#240046'
       },
+      bluebeach: {
+        DEFAULT: '#184899'
+      },
     },
     extend: {
       // Set default transition durations and easing when using the transition utilities.
