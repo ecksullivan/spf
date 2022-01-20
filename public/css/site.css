@@ -2833,6 +2833,10 @@ html {
     grid-column: span 12 / span 12;
   }
 
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:col-start-3 {
     grid-column-start: 3;
   }
