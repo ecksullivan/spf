@@ -1415,6 +1415,27 @@ html {
 .mb-8 {
   margin-bottom: 2rem;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
+.mb-14 {
+  margin-bottom: 3.5rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.-mt-1 {
+  margin-top: -0.25rem;
+}
+.-mt-4 {
+  margin-top: -1rem;
+}
+.-mt-5 {
+  margin-top: -1.25rem;
+}
+.-mt-6 {
+  margin-top: -1.5rem;
+}
 .block {
   display: block;
 }
