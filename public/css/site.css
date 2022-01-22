@@ -1133,6 +1133,23 @@ html {
 .aspect-h-9 {
   --tw-aspect-h: 9;
 }
+.aspect-w-5 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 5;
+}
+.aspect-w-5 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.aspect-h-3 {
+  --tw-aspect-h: 3;
+}
 .fluid-container {
   width: 100%;
   max-width: 1280px;
@@ -1647,6 +1664,14 @@ html {
   --tw-translate-y: 6rem;
   transform: var(--tw-transform);
 }
+.translate-x-6 {
+  --tw-translate-x: 1.5rem;
+  transform: var(--tw-transform);
+}
+.translate-y-6 {
+  --tw-translate-y: 1.5rem;
+  transform: var(--tw-transform);
+}
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: var(--tw-transform);
@@ -2011,6 +2036,10 @@ html {
   -o-object-position: center;
      object-position: center;
 }
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -2155,6 +2184,9 @@ html {
 }
 .pt-3 {
   padding-top: 0.75rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;
@@ -2884,6 +2916,11 @@ html {
     max-width: 48rem;
   }
 
+  .sm\:translate-x-16 {
+    --tw-translate-x: 4rem;
+    transform: var(--tw-transform);
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2945,6 +2982,10 @@ html {
     padding-right: 0px;
   }
 
+  .sm\:pt-16 {
+    padding-top: 4rem;
+  }
+
   .sm\:text-center {
     text-align: center;
   }
@@ -2980,6 +3021,26 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
+  }
+
+  .md\:aspect-w-2 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 2;
+  }
+
+  .md\:aspect-w-2 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .md\:aspect-h-1 {
+    --tw-aspect-h: 1;
   }
 
   .md\:absolute {
@@ -3245,6 +3306,11 @@ html {
     max-width: 80rem;
   }
 
+  .lg\:translate-y-20 {
+    --tw-translate-y: 5rem;
+    transform: var(--tw-transform);
+  }
+
   .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
@@ -3285,6 +3351,10 @@ html {
     gap: 2rem;
   }
 
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
   .lg\:gap-y-0 {
     row-gap: 0px;
   }
@@ -3292,6 +3362,10 @@ html {
   .lg\:gap-x-8 {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
+  }
+
+  .lg\:self-center {
+    align-self: center;
   }
 
   .lg\:rounded-3xl {
@@ -3328,6 +3402,10 @@ html {
 
   .lg\:pr-72 {
     padding-right: 18rem;
+  }
+
+  .lg\:pr-0 {
+    padding-right: 0px;
   }
 
   .lg\:text-6xl {
@@ -3375,6 +3453,16 @@ html {
   .xl\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .xl\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .xl\:pr-12 {
