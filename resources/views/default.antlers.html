@@ -627,7 +627,7 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="bg-white" id="sponsorship">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-start">
+        <div class="lg:grid lg:grid-cols-1 lg:gap-8 lg:items-start justify-center">
             <div>
                 <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
                     Sponsorship Opportunities
@@ -654,12 +654,7 @@
                 <p class="text-gray text-md mt-4 text-red-700">Sponsorship Applications are Due no later than
                     <strong>February 1st, 2022</strong></p>
             </div>
-            <div class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                <div class="col-span-2 flex justify-center py-8 px-8 bg-gray-50">
-                    <a href="https://www.wptv.com/"><img class="h-52 transition-all hover:h-72" src="/assets/wptv.png"
-                            alt="WPTV"></a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -667,72 +662,84 @@
 <div class="bg-white" id="sponsorship">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div class="lg:grid lg:grid-cols-1 lg:gap-8 lg:items-start">
-            <div class="mt-8 grid grid-cols-4 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-6">
+            <div class="mt-8 grid grid-cols-6 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-6">
+
+                <!-- master Start -->
+                <div class="col-span-6 flex justify-center py-8 px-8 bg-gray-50">
+                    <a href="https://www.wptv.com/"><img class="h-72 transition-all" src="/assets/wptv.png"
+                        alt="WPTV"></a>
+                </div>
+                <!-- master End -->
 
                 <!-- Primary Start -->
-                <div class="hidden md:block col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
-                <div class="col-span-4 flex justify-center py-8 px-8 bg-gray-50">
+                <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
+                <div class="col-span-4 md:col-span-4 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://lakeworthbeachfl.gov/utilities/electric/"><img
-                            class="h-36 transition-all hover:h-48" src="/assets/eulogo.png"
+                            class="h-fit transition-all" src="/assets/eulogo.png"
                             alt="Lake Worth Beach Electric Utilities"></a>
                 </div>
-                <div class="hidden md:block col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
+                <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
                 <!-- Primary End -->
 
                 <!-- Secondary Start -->
-                <div class="col-span-1 md:col-span-2 flex justify-center py-8 px-8 bg-gray-50"></div>
-                <div class="col-span-2 flex justify-center py-8 px-8 bg-gray-50">
-                    <a href="https://www.southflpodiatry.com/"><img class="h-32 transition-all hover:h-48"
+                <div class="hidden md:block col-span-1 md:col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
+                <div class="col-span-3 md:col-span-2 flex justify-center py-8 px-8 bg-gray-50">
+                    <a href="https://www.southflpodiatry.com/"><img class="h-fit transition-all"
                             src="/assets/sfp2.png" alt="South Florida Podiatry"></a>
                 </div>
-                <div class="ol-span-1 md:col-span-2 flex justify-center py-8 px-8 bg-gray-50"></div>
+                <div class="col-span-3 md:col-span-2 flex justify-center py-8 px-8 bg-gray-50">
+                    <a href="https://flaglerbankusa.com/"><img class="h-fit transition-all"
+                        src="/assets/fbl-1642874426.png" alt="Flagler Bank"></a>
+                </div>
+                <div class="hidden md:block col-span-1 md:col-span-1 flex justify-center py-8 px-8 bg-gray-50"></div>
+                <!-- secondary end-->
 
 
                 <div class="col-span-2 flex justify-center py-8 px-8 bg-gray-50">
-                    <a href="https://www.facebook.com/LWBchTShirtCo/"><img class="h-24 transition-all hover:h-48"
+                    <a href="https://www.facebook.com/LWBchTShirtCo/"><img class="h-20 transition-all"
                             src="/assets/lwb-tshirt.png" alt="Lake Worth Beach T-Shirt Company"></a>
                 </div>
                 <div class="col-span-2 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://www.palmbeachpost.com/">
-                        <img class="h-28 pb-2 transition-all hover:h-48" src="/assets/pbp.png" alt="Palm Beach Post">
+                        <img class="h-24 pb-2 transition-all" src="/assets/pbp.png" alt="Palm Beach Post">
                     </a>
                 </div>
                 <div class="col-span-2 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://www.lakeworthcra.org/">
-                        <img class="h-28 pb-2 transition-all hover:h-48" src="/assets/cra1.png"
+                        <img class="h-24 pb-2 transition-all" src="/assets/cra1.png"
                             alt="Lake Worth Beach CRA">
                     </a>
                 </div>
 
                 <div class="col-span-2 md:col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <a href="">
-                        <img class="h-28 pb-2 transition-all hover:h-48" src="" alt="">
+                    <a href="https://www.facebook.com/mangogroves/">
+                        <img class="h-14 pb-2 transition-all" src="/assets/mgna.png" alt="Mango Groves Neighborhood Association">
                     </a>
                 </div>
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://business.facebook.com/pg/ZooGymDowntownLakeWorth/posts/"><img
-                            class="h-12 block transition-all hover:h-48" src="/assets/zoologo.jpg"
+                            class="h-12 block transition-all" src="/assets/zoologo.jpg"
                             alt="The Zoo Health Club">
                     </a>
                 </div>
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://rudyspubinlakeworth.com/">
-                        <img class="h-12 block transition-all hover:h-48" src="/assets/rudys.png" alt="Rudys Pub">
+                        <img class="h-12 block transition-all" src="/assets/rudys.png" alt="Rudys Pub">
                     </a>
                 </div>
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="https://ldubsubs.com/">
-                        <img class="h-12 block transition-all hover:h-48" src="/assets/ldub.png" alt="LDubSubs">
+                        <img class="h-12 block transition-all" src="/assets/ldub.png" alt="LDubSubs">
                     </a>
                 </div>
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
                     <a href="">
-                        <img class="h-12 block transition-all hover:h-48" src="/assets/arts4all.png" alt="Arts 4 All">
+                        <img class="h-12 block transition-all" src="/assets/arts4all.png" alt="Arts 4 All">
                     </a>
                 </div>
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50">
-                    <a href="">
-                        <img class="h-28 pb-2 transition-all hover:h-48" src="" alt="">
+                    <a href="https://www.joinremax.com/remaxprestige">
+                        <img class="h-12 block transition-all" src="/assets/remax.png" alt="REMAX Prestige">
                     </a>
                 </div>
 
