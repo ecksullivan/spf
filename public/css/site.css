@@ -2095,6 +2095,10 @@ html {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -2962,6 +2966,22 @@ html {
 }
 @media (min-width: 768px) {
 
+  .md\:aspect-w-10 {
+    position: relative;
+    padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+    --tw-aspect-w: 10;
+  }
+
+  .md\:aspect-w-10 > * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   .md\:absolute {
     position: absolute;
   }
@@ -3070,6 +3090,10 @@ html {
     width: 20rem;
   }
 
+  .md\:max-w-md {
+    max-width: 28rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3086,9 +3110,18 @@ html {
     justify-content: space-between;
   }
 
+  .md\:rounded-3xl {
+    border-radius: 1.5rem;
+  }
+
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .md\:pl-10 {
