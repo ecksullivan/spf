@@ -1433,6 +1433,9 @@ html {
 .mt-5 {
   margin-top: 1.25rem;
 }
+.-mt-5 {
+  margin-top: -1.25rem;
+}
 .ml-4 {
   margin-left: 1rem;
 }
@@ -1526,9 +1529,6 @@ html {
 .h-auto {
   height: auto;
 }
-.h-3 {
-  height: 0.75rem;
-}
 .h-10 {
   height: 2.5rem;
 }
@@ -1574,9 +1574,6 @@ html {
 .w-64 {
   width: 16rem;
 }
-.w-3 {
-  width: 0.75rem;
-}
 .w-32 {
   width: 8rem;
 }
@@ -1591,6 +1588,9 @@ html {
 }
 .w-16 {
   width: 4rem;
+}
+.w-3 {
+  width: 0.75rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -2179,6 +2179,12 @@ html {
 .pr-1 {
   padding-right: 0.25rem;
 }
+.pb-4 {
+  padding-bottom: 1rem;
+}
+.pl-4 {
+  padding-left: 1rem;
+}
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -2199,9 +2205,6 @@ html {
 }
 .pb-8 {
   padding-bottom: 2rem;
-}
-.pl-4 {
-  padding-left: 1rem;
 }
 .text-left {
   text-align: left;
