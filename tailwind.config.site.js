@@ -33,11 +33,23 @@ module.exports = {
       purplebeach: {
         DEFAULT: '#5a189a'
       },
+      lighterpurple: {
+        DEFAULT: '#EADCFA'
+      },
       purpledark: {
         DEFAULT: '#240046'
       },
       bluebeach: {
         DEFAULT: '#184899'
+      },
+      mainblue: {
+        DEFAULT: '#344195'
+      },
+      mediumblue: {
+        DEFAULT: '#8691D5'
+      },
+      lighterblue: {
+        DEFAULT: '#E1E3F4'
       },
     },
     extend: {
