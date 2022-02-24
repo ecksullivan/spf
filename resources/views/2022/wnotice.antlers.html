@@ -8,124 +8,48 @@
                     <p class="mt-3 text-xl text-gray-500 sm:mt-4">Find our weekly notices here or click the button
                         below!</p>
                 </div>
-                <div class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
-                    <div>
-                        <div>
+                <div class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12 flex">
+                    {{ collection from="meeting_notices" sort="meeting_date:asc" }}
+                    <div class="flex flex-col">
+                        <div class="flex-1">
                             <a href="#" class="inline-block">
-                                <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-lighterblue text-indigo-800">
-                                    Commission </span>
+                                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium 
+                                    
+                                    {{ if meeting_type == 'city-commission' }}
+                                    bg-lighterblue text-indigo-800
+                                    {{ elseif meeting_type == 'special-magistrate' }}
+                                    bg-green-100 text-green-800
+                                    {{ elseif meeting_type | contains:advisory-board }}
+                                    bg-purplebeach text-lighterpurple
+                                    {{ /if }}
+                                     ">
+                                    {{ meeting_type:label }} </span>
                             </a>
-                        </div>
+                        
                         <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">City Commission Pre-agenda Work Session</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam
-                                mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
+                            <p class="text-xl font-semibold text-gray-900 flex-1">{{ title }}</p>
+                            <p class="mt-3 text-base text-gray-500">{{ content | striptags | truncate:130:... }}</p>
+                            
                         </a>
-
-                        <hr class="mt-6">
-
-                        <div class="mt-6 flex items-center">
-                            <div class="">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Meeting Date </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2022-02-23"> Feb 23, 2022 </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-purplebeach text-lighterpurple">
-                                    Advisory Board </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">Historic Resources Preservation Board<br>&nbsp;</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam
-                                mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                        </a>
-
-                        <hr class="mt-6">
-
-                        <div class="mt-6 flex items-center">
-                            <div class="">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Meeting Date </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2022-02-23"> Feb 23, 2022 </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                                    Special Magistrate </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">Special Magistrate Hearing - Code Compliance</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam
-                                mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                        </a>
-
-                        <hr class="mt-6">
-
-                        <div class="mt-6 flex items-center">
-                            <div class="">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Meeting Date </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2022-02-23"> Feb 23, 2022 </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <a href="#" class="inline-block">
-                                <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                                    Special Magistrate </span>
-                            </a>
-                        </div>
-                        <a href="#" class="block mt-4">
-                            <p class="text-xl font-semibold text-gray-900">Special Magistrate Hearing - Code Compliance</p>
-                            <p class="mt-3 text-base text-gray-500">Nullam risus blandit ac aliquam justo ipsum. Quam
-                                mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.</p>
-                        </a>
-
-                        <hr class="mt-6">
-
-                        <div class="mt-6 flex items-center">
-                            <div class="">
-                                <p class="text-sm font-medium text-gray-900">
-                                    <a href="#"> Meeting Date </a>
-                                </p>
-                                <div class="flex space-x-1 text-sm text-gray-500">
-                                    <time datetime="2022-02-23"> Feb 23, 2022 </time>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
                         
                     </div>
+                        <hr class="mt-6">
+                        
 
-
-
+                        <div class="mt-6 flex items-center">
+                            <div class="">
+                                <p class="text-sm font-medium text-gray-900">
+                                    <a href="#"> Meeting Date </a>
+                                </p>
+                                <div class="flex space-x-1 text-sm text-gray-500">
+                                    {{ meeting_date }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ /collection }}
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
