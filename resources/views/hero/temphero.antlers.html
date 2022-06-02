@@ -1,7 +1,7 @@
 <div class="bg-gray-900">
   <div class="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
     <!-- Currency selector -->
-    <form class="hidden lg:block lg:flex-1">
+    <form class="lg:block lg:flex-1">
       <div class="flex">
         <div id="google_translate_element"></div>
         <!--<label for="language" class="sr-only">Language</label>
@@ -47,7 +47,28 @@
   </div>
 </div>
 
-<div class="relative bg-white">
+<div class="relative bg-white"x-data="{
+  open: false,
+  toggle() {
+      if (this.open) {
+          return this.close()
+      }
+
+      this.$refs.button.focus()
+
+      this.open = true
+  },
+  close(focusAfter) {
+      if (! this.open) return
+
+      this.open = false
+
+      focusAfter && focusAfter.focus()
+  }
+}"
+x-on:keydown.escape.prevent.stop="close($refs.button)"
+x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+x-id="['mainmenubtn']">
     <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
     <div class="relative z-20">
       <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
@@ -58,7 +79,10 @@
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
-          <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+          <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" x-ref="button"
+          x-on:click="toggle()"
+          :aria-expanded="open"
+          :aria-controls="$id('mainmenubtn')">
             <span class="sr-only">Open menu</span>
             <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -94,25 +118,23 @@
       </div>
     </div>
   
-    <!--
-      Mobile menu, show/hide based on mobile menu state.
-  
-      Entering: "duration-200 ease-out"
-        From: "opacity-0 scale-95"
-        To: "opacity-100 scale-100"
-      Leaving: "duration-100 ease-in"
-        From: "opacity-100 scale-100"
-        To: "opacity-0 scale-95"
-    -->
-    <div class=" hidden absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+    <div class="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden" x-ref="panel"
+    x-show="open"
+    x-transition.origin.top.left
+    x-on:click.outside="close($refs.button)"
+    :id="$id('mainmenubtn')"
+    style="display: none;">
       <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
         <div class="pt-5 pb-6 px-5 sm:pb-8">
           <div class="flex items-center justify-between">
             <div>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+              <img class="h-20 w-auto sm:h-20" src="/assets/lwbassets/logo-uc-main.png" alt="Lake Worth Beach">
             </div>
             <div class="-mr-2">
-              <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" x-ref="button"
+              x-on:click="toggle()"
+              :aria-expanded="open"
+              :aria-controls="$id('mainmenubtn')">
                 <span class="sr-only">Close menu</span>
                 <!-- Heroicon name: outline/x -->
                 <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -124,7 +146,7 @@
           <div class="mt-6 sm:mt-8">
             <nav>
               <div class="grid gap-7 sm:grid-cols-2 sm:gap-y-8 sm:gap-x-4">
-                <a href="#" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                <a href="https://lakeworthbeachfl.gov/our-city/" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                   <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                     <!-- Heroicon name: outline/chart-bar -->
                     <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -132,11 +154,11 @@
                     </svg>
                   </div>
                   <div class="ml-4 text-base font-medium text-gray-900">
-                    Analytics
+                    Our City
                   </div>
                 </a>
   
-                <a href="#" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                <a href="https://lakeworthbeachfl.gov/government/" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                   <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                     <!-- Heroicon name: outline/cursor-click -->
                     <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -144,11 +166,11 @@
                     </svg>
                   </div>
                   <div class="ml-4 text-base font-medium text-gray-900">
-                    Engagement
+                    Government
                   </div>
                 </a>
   
-                <a href="#" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                <a href="https://lakeworthbeachfl.gov/community-sustainability/" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                   <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                     <!-- Heroicon name: outline/shield-check -->
                     <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -156,11 +178,11 @@
                     </svg>
                   </div>
                   <div class="ml-4 text-base font-medium text-gray-900">
-                    Security
+                    Business
                   </div>
                 </a>
   
-                <a href="#" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                <a href="https://lakeworthbeachfl.gov/events/" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
                   <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
                     <!-- Heroicon name: outline/view-grid -->
                     <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -168,52 +190,31 @@
                     </svg>
                   </div>
                   <div class="ml-4 text-base font-medium text-gray-900">
-                    Integrations
+                    Special Events
+                  </div>
+                </a>
+
+                <a href="https://lakeworthbeachfl.gov/utilities/" class="-m-3 flex items-center p-3 rounded-lg hover:bg-gray-50">
+                  <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
+                    <!-- Heroicon name: outline/shield-check -->
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div class="ml-4 text-base font-medium text-gray-900">
+                    Utilities
                   </div>
                 </a>
               </div>
-              <div class="mt-8 text-base">
-                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all products <span aria-hidden="true">&rarr;</span></a>
-              </div>
+
             </nav>
           </div>
         </div>
         <div class="py-6 px-5">
-          <div class="grid grid-cols-2 gap-4">
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Pricing
-            </a>
-  
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Docs
-            </a>
-  
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Company
-            </a>
-  
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Resources
-            </a>
-  
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Blog
-            </a>
-  
-            <a href="#" class="rounded-md text-base font-medium text-gray-900 hover:text-gray-700">
-              Contact Sales
-            </a>
-          </div>
           <div class="mt-6">
-            <a href="#" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-              Sign up
+            <a href="https://lakeworthbeachfl.gov/make-a-report/" class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-mainblue hover:bg-indigo-700">
+              Make a Report
             </a>
-            <p class="mt-6 text-center text-base font-medium text-gray-500">
-              Existing customer?
-              <a href="#" class="text-indigo-600 hover:text-indigo-500">
-                Sign in
-              </a>
-            </p>
           </div>
         </div>
       </div>
