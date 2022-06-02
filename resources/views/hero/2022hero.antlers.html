@@ -1,4 +1,52 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="bg-gray-900">
+  <div class="max-w-7xl mx-auto h-10 px-4 flex items-center justify-between sm:px-6 lg:px-8">
+    <!-- Currency selector -->
+    <form class="hidden lg:block lg:flex-1">
+      <div class="flex">
+        <div id="google_translate_element"></div>
+        <!--<label for="language" class="sr-only">Language</label>
+        <div class="-ml-2 group relative bg-gray-900 border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
+          <select id="dd" name="language" class="bg-none bg-gray-900 border-transparent rounded-md py-0.5 pl-2 pr-5 flex items-center text-sm font-medium text-white group-hover:text-gray-100 focus:outline-none focus:ring-0 focus:border-transparent">
+            <option>English</option>
+
+            <option>Spanish</option>
+
+            <option>Creole</option>
+          </select>
+         
+       <div class="absolute right-0 inset-y-0 flex items-center pointer-events-none">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" class="w-5 h-5 text-gray-300">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4" />
+            </svg>
+          </div>
+        </div>-->
+      </div>
+    </form>
+
+    <div class="flex-1 text-center text-sm font-medium text-white lg:flex-none">
+      <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+        <a href="https://lakeworthbeachfl.gov/directory/" class="text-sm font-medium text-white hover:text-gray-100">Directory</a>
+        <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+        <a href="https://lakeworthbeachfl.gov/news/" class="text-sm font-medium text-white hover:text-gray-100">News & Updates</a>
+        <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+        <a href="https://lakeworthbeachfl.gov/government/commission-agendas-and-minutes/" class="text-sm font-medium text-white hover:text-gray-100">Agendas</a>
+        <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+        <a href="https://lakeworthbeachfl.gov/maps/" class="text-sm font-medium text-white hover:text-gray-100">Maps</a>
+      </div>
+    </div>
+
+    <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+      <a href="https://www.facebook.com/LakeWorthBeachPBC/" target="_blank" class="text-sm font-medium text-white hover:text-gray-100"><i class="fa-brands fa-facebook-square"></i></a>
+      <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+      <a href="https://twitter.com/lakeworthbchpbc?lang=en" target="_blank" class="text-sm font-medium text-white hover:text-gray-100"><i class="fa-brands fa-twitter-square"></i></a>
+      <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+      <a href="https://www.linkedin.com/company/lake-worth-beach" target="_blank" class="text-sm font-medium text-white hover:text-gray-100"><i class="fa-brands fa-linkedin"></i></a>
+      <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
+      <a href="https://www.youtube.com/channel/UCncwxP4Mx5GFK_AktC8WdwQ" target="_blank" class="text-sm font-medium text-white hover:text-gray-100"><i class="fa-brands fa-youtube-square"></i></a>
+    </div>
+  </div>
+</div>
+
 <div class="relative bg-white">
     <div class="absolute inset-0 shadow z-30 pointer-events-none" aria-hidden="true"></div>
     <div class="relative z-20">
@@ -17,22 +65,53 @@
             </svg>
           </button>
         </div>
-        <div class="hidden md:flex-1 md:flex md:items-center md:justify-between">
+        <div class="hidden md:flex-1 md:flex md:items-center md:justify-between" >
           <nav class="flex space-x-10">
-            <div>
-              <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-xs font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase" aria-expanded="false">
-                <span class="">Our City</span>
+            <div x-data="{
+              open: false,
+              toggle() {
+                  if (this.open) {
+                      return this.close()
+                  }
+   
+                  this.$refs.button.focus()
+   
+                  this.open = true
+              },
+              close(focusAfter) {
+                  if (! this.open) return
+   
+                  this.open = false
+   
+                  focusAfter && focusAfter.focus()
+              }
+          }"
+          x-on:keydown.escape.prevent.stop="close($refs.button)"
+          x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+          x-id="['dropdown-button']">
+              <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-md font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase" aria-expanded="false" x-ref="button"
+              x-on:click="toggle()"
+              :aria-expanded="open"
+              :aria-controls="$id('dropdown-button')"
+              type="button">
+                <span class="text-sm">Community</span>
                 <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </button>
-              <div class="hidden md:block absolute z-10 top-full inset-x-0 transform shadow-lg">
+              <div class="md:block absolute z-10 top-full inset-x-0 transform shadow-lg" >
                 <div class="absolute inset-0 flex">
                   <div class="bg-white w-1/2"></div>
                   <div class="bg-gray-50 w-1/2"></div>
                 </div>
-                <div class="hidden relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2">
-                  <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
+                <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2" x-ref="panel"
+                x-show="open"
+                x-transition.origin.top.left
+                x-on:click.outside="close($refs.button)"
+                :id="$id('dropdown-button')"
+                style="display: none;">
+                  <nav class="grid gap-y-10 px-4 py-8 bg-white sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 sm:py-12 sm:px-6 lg:px-8 xl:pr-12">
+                    <!-- with nav from CMS 
                     <div>
                       <h3 class="text-xs font-medium tracking-wide text-gray-500 uppercase pb-4">
                         Leisure Services
@@ -50,48 +129,189 @@
                         {{ /nav:leisure_services }}
                       </ul>
                     </div>
+                    -->
+                    <div>
+                      <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
+                        Leisure Services
+                      </h3>
+                      <ul role="list" class="mt-5 space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/user-group -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span class="ml-4">Recreation</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/globe-alt -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            <span class="ml-4">City Library</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/bookmark-alt -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Parks & Fields</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Golf Club</span>
+                          </a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Parks</span>
+                          </a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Facility Rentals</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
+                        Beach & Beach Complex
+                      </h3>
+                      <ul role="list" class="mt-5 space-y-6">
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/user-group -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            <span class="ml-4">Parking</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/globe-alt -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                            <span class="ml-4">Parking Permits</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/bookmark-alt -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Boat Ramp Permits</span>
+                          </a>
+                        </li>
+  
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Weddings & Events</span>
+                          </a>
+                        </li>
+
+                      
+
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Ocean Rescue</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                     <div>
                       <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
                         Resources
                       </h3>
                       <ul role="list" class="mt-5 space-y-6">
                         <li class="flow-root">
-                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
                             <!-- Heroicon name: outline/user-group -->
                             <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
-                            <span class="ml-4">Community</span>
+                            <span class="ml-4">COVID</span>
                           </a>
                         </li>
   
                         <li class="flow-root">
-                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
                             <!-- Heroicon name: outline/globe-alt -->
                             <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                             </svg>
-                            <span class="ml-4">Partners</span>
+                            <span class="ml-4">Hurricane & Storm</span>
                           </a>
                         </li>
   
                         <li class="flow-root">
-                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
                             <!-- Heroicon name: outline/bookmark-alt -->
                             <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span class="ml-4">Guides</span>
+                            <span class="ml-4">City Directory</span>
                           </a>
                         </li>
   
                         <li class="flow-root">
-                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
                             <!-- Heroicon name: outline/desktop-computer -->
                             <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <span class="ml-4">Webinars</span>
+                            <span class="ml-4">City Locations</span>
+                          </a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">City Parking</span>
+                          </a>
+                        </li>
+                        <li class="flow-root">
+                          <a href="#" class="-m-3 p-3 flex items-center rounded-md text-sm  font-medium text-gray-900 hover:bg-gray-50">
+                            <!-- Heroicon name: outline/desktop-computer -->
+                            <svg class="flex-shrink-0 h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-4">Public Works</span>
                           </a>
                         </li>
                       </ul>
@@ -100,7 +320,7 @@
                   <div class="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                     <div>
                       <h3 class="text-sm font-medium tracking-wide text-gray-500 uppercase">
-                        From the blog
+                        Latest News
                       </h3>
                       <ul role="list" class="mt-6 space-y-6">
                         <li class="flow-root">
@@ -110,10 +330,10 @@
                             </div>
                             <div class="w-0 flex-1 sm:ml-8">
                               <h4 class="text-base font-medium text-gray-900 truncate">
-                                Boost your conversion rate
+                                Residential Beach Parking Permits Available May 1
                               </h4>
                               <p class="mt-1 text-sm text-gray-500">
-                                Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.
+                                The beach decal period is effective May 1, 2022 to April 30, 2023. The price will be $64.20 for residents (including tax) and $96.30 for seasonal residents (including tax).  <span class="text-purplebeach">Read More...</span>
                               </p>
                             </div>
                           </a>
@@ -126,10 +346,10 @@
                             </div>
                             <div class="w-0 flex-1 sm:ml-8">
                               <h4 class="text-base font-medium text-gray-900 truncate">
-                                How to use search engine optimization to drive traffic to your site
+                                FDOT Federal Hwy Infrastructure Update Commission Workshop
                               </h4>
                               <p class="mt-1 text-sm text-gray-500">
-                                Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.
+                                The Florida Department of Transportation (FDOT) has multiple upcoming projects in the City of Lake Worth Beach. Two of these will occur  <span class="text-purplebeach">Read More...</span>
                               </p>
                             </div>
                           </a>
@@ -137,7 +357,7 @@
                       </ul>
                     </div>
                     <div class="mt-6 text-sm font-medium">
-                      <a href="#" class="text-indigo-600 hover:text-indigo-500"> View all posts <span aria-hidden="true">&rarr;</span></a>
+                      <a href="#" class="text-indigo-600 hover:text-indigo-500"> View all News Articles <span aria-hidden="true">&rarr;</span></a>
                     </div>
                   </div>
                 </div>
@@ -145,8 +365,8 @@
             </div>
             <!-- Government -->
             <div>
-              <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-xs font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase" aria-expanded="false">
-                <span class="">Government</span>
+              <button type="button" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-md font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase" aria-expanded="false">
+                <span class="text-sm">Government</span>
                 <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
@@ -267,19 +487,19 @@
               </div>
             </div>
             <!-- Government END -->
-            <a href="#" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-xs font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase">
+            <a href="#" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-md font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase text-sm">
               Business
             </a>
-            <a href="#" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-xs font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase">
-              Meetings &amp; Events
+            <a href="#" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-md font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase text-sm">
+             Explore
             </a>
             
           </nav>
           <div class="flex items-center md:ml-12">
-            <a href="#" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-xs font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase">
+            <a href="https://lakeworthbeachfl.gov/utilities/" class="text-gray-500 group bg-white rounded-md inline-flex items-center text-sm font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 uppercase">
               Utilities
             </a>
-            <a href="#" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-purplebeach hover:bg-indigo-700 uppercase">
+            <a href="https://lakeworthbeachfl.gov/make-a-report/" class="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-mainblue hover:bg-indigo-700 uppercase">
               Make A Report
             </a>
           </div>

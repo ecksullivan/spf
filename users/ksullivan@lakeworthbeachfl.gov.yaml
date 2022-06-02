@@ -10,3 +10,8 @@ preferences:
         - meeting_date
     pages:
       after_save: continue_editing
+    hurricane_and_storm:
+      columns:
+        - title
+        - slug
+        - date

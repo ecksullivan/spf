@@ -37,3 +37,16 @@ marketeer:
     - 'access cp'
     - 'edit redirects globals'
     - 'edit seo globals'
+library:
+  title: Library
+  permissions:
+    - 'access cp'
+    - 'view library entries'
+    - 'edit library entries'
+    - 'create library entries'
+    - 'delete library entries'
+    - 'publish library entries'
+    - 'reorder library entries'
+    - 'edit other authors library entries'
+    - 'publish other authors library entries'
+    - 'delete other authors library entries'

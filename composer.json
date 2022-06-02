@@ -16,7 +16,8 @@
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
         "statamic/cms": "3.2.33",
-        "transformstudios/events": "^3.3"
+        "transformstudios/events": "^3.3",
+        "visuellverstehen/statamic-classify": "^2.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

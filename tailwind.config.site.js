@@ -42,6 +42,21 @@ module.exports = {
       bluebeach: {
         DEFAULT: '#184899'
       },
+      bluebeach1: {
+        DEFAULT: '#184899'
+      },
+      bluebeach2: {
+        DEFAULT: '#1C52B0'
+      },
+      bluebeach3: {
+        DEFAULT: '#1e5ac2'
+      },
+      bluebeach4: {
+        DEFAULT: '#2163d4'
+      },
+      bluebeach5: {
+        DEFAULT: '#2b6dde'
+      },
       mainblue: {
         DEFAULT: '#344195'
       },
@@ -50,6 +65,18 @@ module.exports = {
       },
       lighterblue: {
         DEFAULT: '#E1E3F4'
+      },
+      tealbeach: {
+        DEFAULT: '#87DFE5'
+      },
+      yellowbeach: {
+        DEFAULT: '#FDD568'
+      },
+      tanbeach: {
+        DEFAULT: '#ECDDCB'
+      },
+      amazinggreen: {
+        DEFAULT: '#ACEB98'
       },
     },
     extend: {
