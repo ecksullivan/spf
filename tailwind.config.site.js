@@ -78,6 +78,9 @@ module.exports = {
       amazinggreen: {
         DEFAULT: '#ACEB98'
       },
+      yellowbeach2: {
+        DEFAULT: '#fee440'
+      },
     },
     extend: {
       // Set default transition durations and easing when using the transition utilities.
