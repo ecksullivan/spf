@@ -196,96 +196,8 @@
           </nav>
         </div>
         <main class="lg:col-span-9 xl:col-span-6">
-          <div x-data="{
-            open: false,
-            toggle() {
-                if (this.open) {
-                    return this.close()
-                }
- 
-                this.$refs.button.focus()
- 
-                this.open = true
-            },
-            close(focusAfter) {
-                if (! this.open) return
- 
-                this.open = false
- 
-                focusAfter && focusAfter.focus()
-            }
-        }"
-        x-on:keydown.escape.prevent.stop="close($refs.button)"
-        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-        x-id="['activation-levels']"
-        class="relative">
-            <div class="px-4 sm:px-0">
-            <div class="sm:block">
-              <nav class="relative z-0 rounded-lg shadow flex divide-x divide-gray-200" aria-label="Tabs">
-                <!-- Current: "text-gray-900", Default: "text-gray-500 hover:text-gray-700" -->
-                <a href="#" aria-current="page" class="text-gray-900 rounded-lg group relative min-w-0 flex-1 overflow-hidden bg-yellowbeach2 py-4 px-6 text-sm font-medium text-center focus:z-10" x-ref="button"
-                x-on:click="toggle()"
-                :aria-expanded="open"
-                :aria-controls="$id('acitvation-levels')">
-                  <span class="font-bold uppercase">Activation Level:</span> <span> #3 Enhanced Monitoring</span>
-                  <span aria-hidden="true" class="bg-rose-500 absolute inset-x-0 bottom-0 h-0.5"></span>
-                </a>
-              </nav>
-            </div>
-          </div>
-          <div class="mt-4" x-ref="activationlevel"
-          x-show="open"
-          x-transition.origin.top.left
-          x-on:click.outside="close($refs.button)"
-          :id="$id('activation-levels')">
-            <h1 class="sr-only">Activation Level</h1>
-            <ul role="list" class="space-y-4">
-              <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
-                <article aria-labelledby="question-title-81614">
-                  <div>
-                    <h2 id="question-title-81614" class="mt-0 text-base font-medium text-gray-900">EOC Activation</h2>
-                  </div>
-                  <div class="mt-2 text-sm text-gray-700 space-y-4">
-                    <p>Emergency Operations Center Activation Level Descriptions</p>
-                    <p>
-                        <strong>Level 1 - Full activation.</strong> All lead and support agencies are notified. The
-                        Emergency Operations Center (EOC) is staffed by Division of Emergency
-                        Management (DEM) personnel, the Executive Policy Group (EPG), all Sections
-                        and Branches, their staff, as well as State and Federal representatives. 
-                    </p>
-                    <p>
-                        <strong>Level 2 - Partial activation.</strong> Selected Emergency Operations Center (EOC)
-                        staff are notified. The EOC is staffed by Division of Emergency Management
-                        (DEM) personnel, appropriate Sections, their staff, and outside agencies as
-                        required to meet the operational need of the incident. 
-                    </p>
-                    <p>
-                        <strong>Level 3 - Enhanced Monitoring.</strong> The Division of Emergency Management
-                        (DEM) transitions to this level for incidents or special events that have the
-                        potential for escalation.The County Warning Point (CWP), DEM, and/or other
-                        emergency management personnel are actively monitoring the
-                        incident/event. Notifications are made to appropriate Division and County
-                        personnel and support organizations that may be required to take action as
-                        part of their normal responsibilities. 
-                    </p>
-                    <p>
-                        <strong>Level 4 - Normal Operations.</strong> This is the normal day-to-day operational
-                        level for the Division of Emergency Management (DEM) and the County
-                        Warning Point (CWP), which are continuously monitoring local, regional,
-                        national, and international events, evaluating threats, and analyzing their
-                        impact on Palm Beach County. Appropriate Division and County personnel and
-                        support organizations are notified and informed through a variety of
-                        communication methods based on the urgency required of the incident/event.
-                    </p>
-                  </div>
-                 
-                </article>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-          <div class="mt-4">
+          
+          <div class="">
             <h1 class="sr-only">Activation Level</h1>
             <ul role="list" class="space-y-4">
               <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
@@ -294,20 +206,7 @@
                     <h2 id="question-title-81614" class="mt-4 text-base font-medium text-gray-900">Hurricane Readiness</h2>
                   </div>
                   <div class="mt-2 text-sm text-gray-700 space-y-4">
-                    <p>Hurricane season begins June 1 and ends on November 30, with the peak months for hurricane and tropical storm development being August and September.</p>
-                    <p>
-                        <ul class="list-disc ml-6">
-                            <li class="">
-                                Find out what re-occurring hazards are prone to your local area; consult the <a href="https://discover.pbcgov.org/publicsafety/dem/pages/know-your-zone.aspx" class="text-bluebeach" target="_blank">Palm Beach County Zone Tools</a> for Storm Surge Information
-                            </li>
-                            <li class="pt-2">Familiarize yourself with <a href="http://maps.co.palm-beach.fl.us/cwgis/?app=evacuation_info" class="text-bluebeach" target="_blank">Evacuation Zones</a> and Locate Evacuation Risk Shelters near your area</li>
-                            <li class="pt-2">Determine where you can get building supplies or <a href="https://discover.pbcgov.org/publicsafety/dem/Pages/Hurricane.aspx#_SSG" class="text-bluebeach" target="_blank">groceries</a> during a disaster</li>
-                            <li class="pt-2">Make a Family Disaster Plan and practice it with family members</li>
-                            <li class="pt-2">Plan how to stay in touch with family and friends if everyday methods of communication are not available</li>
-                            <li class="pt-2"><a href="https://discover.pbcgov.org/publicsafety/dem/Pages/Special-Needs.aspx" class="text-bluebeach" target="_blank">Pre-register</a> for Special Needs and Pet-Friendly Shelters</li>
-                        </ul>
-                    </p>
-                    <p>The City of Lake Worth Beach does not operate any shelters during or after the storm, please make use of <a href="https://discover.pbcgov.org/publicsafety/dem/pages/shelters.aspx" class="text-bluebeach" target="_blank">county facilities by clicking here</a>. Also please take note of your evacuation zone and be ready if an evacuation order is given.</p>
+                    {{ content }}
                   </div>
                  
                 </article>
@@ -377,7 +276,7 @@
                       </ul>
                     </div>
                     <div class="mt-6">
-                      <a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>
+                     <!--<a href="#" class="w-full block text-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"> View all </a>-->
                     </div>
                   </div>
                 </div>
@@ -436,8 +335,7 @@
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" nonce="4bPJW2Cf"></script>
+
     </body>
 </html>
 <!-- End: /layout.antlers.html -->
