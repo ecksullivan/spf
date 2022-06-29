@@ -17,6 +17,11 @@ return [
         'a'  => 'link',
         'p' => 'text-sm',
     ],
+    'landinghead' => [
+        'ul li' => 'list-disc',
+        'a'  => 'link',
+        'p' => 'text-sm',
+    ],
 
     // 'blog' => [
     //     'button' => 'button button--blue',

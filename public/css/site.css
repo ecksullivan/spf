@@ -1481,6 +1481,12 @@ html {
 .left-8 {
   left: 2rem;
 }
+.left-1\/2 {
+  left: 50%;
+}
+.right-full {
+  right: 100%;
+}
 .z-10 {
   z-index: 10;
 }
@@ -1560,6 +1566,10 @@ html {
 .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
+}
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
 }
 .mb-20 {
   margin-bottom: 5rem;
@@ -1713,6 +1723,18 @@ html {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.ml-16 {
+  margin-left: 4rem;
+}
+.-mr-48 {
+  margin-right: -12rem;
+}
+.mt-24 {
+  margin-top: 6rem;
+}
+.-ml-48 {
+  margin-left: -12rem;
 }
 .block {
   display: block;
@@ -1912,6 +1934,9 @@ html {
 .max-w-none {
   max-width: none;
 }
+.max-w-xl {
+  max-width: 36rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1920,6 +1945,12 @@ html {
 }
 .shrink-0 {
   flex-shrink: 0;
+}
+.basis-1\/4 {
+  flex-basis: 25%;
+}
+.basis-1\/2 {
+  flex-basis: 50%;
 }
 .border-collapse {
   border-collapse: collapse;
@@ -1961,6 +1992,22 @@ html {
 }
 .translate-y-24 {
   --tw-translate-y: 6rem;
+  transform: var(--tw-transform);
+}
+.-translate-y-1\/4 {
+  --tw-translate-y: -25%;
+  transform: var(--tw-transform);
+}
+.translate-y-16 {
+  --tw-translate-y: 4rem;
+  transform: var(--tw-transform);
+}
+.translate-x-1\/2 {
+  --tw-translate-x: 50%;
+  transform: var(--tw-transform);
+}
+.translate-y-12 {
+  --tw-translate-y: 3rem;
   transform: var(--tw-transform);
 }
 .-rotate-180 {
@@ -2025,6 +2072,12 @@ html {
 }
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.flex-row {
+  flex-direction: row;
 }
 .flex-col {
   flex-direction: column;
@@ -2173,6 +2226,11 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(2.5rem * var(--tw-space-x-reverse));
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
@@ -2703,6 +2761,9 @@ html {
 .pl-8 {
   padding-left: 2rem;
 }
+.pr-4 {
+  padding-right: 1rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2951,6 +3012,9 @@ html {
 }
 .opacity-0 {
   opacity: 0;
+}
+.opacity-75 {
+  opacity: 0.75;
 }
 .mix-blend-multiply {
   mix-blend-mode: multiply;
@@ -3537,6 +3601,10 @@ html {
     margin-top: 2rem;
   }
 
+  .sm\:mt-16 {
+    margin-top: 4rem;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -3872,6 +3940,14 @@ html {
     padding-bottom: 2rem;
   }
 
+  .sm\:pl-6 {
+    padding-left: 1.5rem;
+  }
+
+  .sm\:pr-6 {
+    padding-right: 1.5rem;
+  }
+
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -4012,6 +4088,14 @@ html {
     margin-left: 3rem;
   }
 
+  .md\:-mr-16 {
+    margin-right: -4rem;
+  }
+
+  .md\:-ml-16 {
+    margin-left: -4rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4136,6 +4220,14 @@ html {
     left: 0;
   }
 
+  .lg\:absolute {
+    position: absolute;
+  }
+
+  .lg\:relative {
+    position: relative;
+  }
+
   .lg\:top-auto {
     top: auto;
   }
@@ -4150,6 +4242,14 @@ html {
 
   .lg\:left-1\/2 {
     left: 50%;
+  }
+
+  .lg\:left-0 {
+    left: 0px;
+  }
+
+  .lg\:right-0 {
+    right: 0px;
   }
 
   .lg\:order-last {
@@ -4192,13 +4292,26 @@ html {
     grid-column-start: 4;
   }
 
+  .lg\:col-start-2 {
+    grid-column-start: 2;
+  }
+
   .lg\:row-start-1 {
     grid-row-start: 1;
+  }
+
+  .lg\:m-0 {
+    margin: 0px;
   }
 
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .lg\:mt-0 {
@@ -4211,6 +4324,10 @@ html {
 
   .lg\:ml-8 {
     margin-left: 2rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
   }
 
   .lg\:block {
@@ -4237,12 +4354,20 @@ html {
     height: 12rem;
   }
 
+  .lg\:h-full {
+    height: 100%;
+  }
+
   .lg\:w-0 {
     width: 0px;
   }
 
   .lg\:w-48 {
     width: 12rem;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:max-w-none {
@@ -4280,6 +4405,14 @@ html {
   .lg\:translate-y-20 {
     --tw-translate-y: 5rem;
     transform: var(--tw-transform);
+  }
+
+  .lg\:grid-flow-row-dense {
+    grid-auto-flow: row dense;
+  }
+
+  .lg\:grid-flow-col-dense {
+    grid-auto-flow: column dense;
   }
 
   .lg\:grid-cols-12 {
@@ -4340,6 +4473,10 @@ html {
 
   .lg\:gap-5 {
     gap: 1.25rem;
+  }
+
+  .lg\:gap-24 {
+    gap: 6rem;
   }
 
   .lg\:gap-y-0 {
@@ -4414,6 +4551,16 @@ html {
   .lg\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .lg\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .lg\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 
   .lg\:pr-72 {
