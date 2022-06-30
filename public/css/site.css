@@ -1335,6 +1335,23 @@ html {
 .aspect-h-9 {
   --tw-aspect-h: 9;
 }
+.aspect-w-12 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 12;
+}
+.aspect-w-12 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.aspect-h-7 {
+  --tw-aspect-h: 7;
+}
 .fluid-container {
   width: 100%;
   max-width: 1280px;
@@ -1486,6 +1503,18 @@ html {
 }
 .right-full {
   right: 100%;
+}
+.top-12 {
+  top: 3rem;
+}
+.top-1\/2 {
+  top: 50%;
+}
+.bottom-12 {
+  bottom: 3rem;
+}
+.left-3\/4 {
+  left: 75%;
 }
 .z-10 {
   z-index: 10;
@@ -1940,6 +1969,9 @@ html {
 .flex-1 {
   flex: 1 1 0%;
 }
+.flex-none {
+  flex: none;
+}
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -2008,6 +2040,14 @@ html {
 }
 .translate-y-12 {
   --tw-translate-y: 3rem;
+  transform: var(--tw-transform);
+}
+.translate-x-32 {
+  --tw-translate-x: 8rem;
+  transform: var(--tw-transform);
+}
+.-translate-x-32 {
+  --tw-translate-x: -8rem;
   transform: var(--tw-transform);
 }
 .-rotate-180 {
@@ -4220,12 +4260,67 @@ html {
     left: 0;
   }
 
+  .lg\:aspect-none {
+    position: static;
+    padding-bottom: 0;
+  }
+
+  .lg\:aspect-none > * {
+    position: static;
+    height: auto;
+    width: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .outer-grid > *:last-child.lg\:w-full {
+    margin-bottom: -3rem;
+  }
+
+  @media (min-width: 768px) {
+
+    .outer-grid {
+      row-gap: 4rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .outer-grid > *:last-child.lg\:w-full {
+      margin-bottom: -4rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    .fluid-container {
+      padding-left: calc(env(safe-area-inset-left, 0rem) + 3rem);
+      padding-right: calc(env(safe-area-inset-right, 0rem) + 3rem);
+    }
+
+    .outer-grid {
+      row-gap: 6rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .outer-grid > *:last-child.lg\:w-full {
+      margin-bottom: -6rem;
+    }
+  }
+
   .lg\:absolute {
     position: absolute;
   }
 
   .lg\:relative {
     position: relative;
+  }
+
+  .lg\:inset-y-0 {
+    top: 0px;
+    bottom: 0px;
   }
 
   .lg\:top-auto {
@@ -4368,6 +4463,10 @@ html {
 
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:max-w-none {

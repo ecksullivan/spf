@@ -9,7 +9,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: bf43418f-b641-40a9-8284-93dfcbbc3207
-updated_at: 1656464768
+updated_at: 1656468943
 hero_text: 'The Lake Worth Beach City Library (LWBCL) offers library card holders resources such as children’s and adult books, videos, and audio books. Library services include WiFi, laptops, printing, scanning, faxing, and hotspots. Additional resources are available on-line using a LWBCL card.'
 about_the_team: 'Our team is made up of 3 amazing individuals that work very hard.  We  love our community and this is demo text that I am using to fill up space.  Having 2 Sentences is ideal but anything works!'
 team_members:
@@ -120,4 +120,6 @@ team_member:
     type: member
     enabled: true
 feature_button_text: 'Click Here to Apply For Your Library Card Online'
+content_focused: false
+header_infobox: true
 ---

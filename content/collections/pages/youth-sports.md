@@ -11,7 +11,7 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: bf43418f-b641-40a9-8284-93dfcbbc3207
-updated_at: 1656468135
+updated_at: 1656468917
 hero_wallpaper: lwbassets/lwb-1--18.jpg
 hero_text: 'The Lake Worth Beach Parks and Recreation Department is proud to offer a wide variety of athletic leagues and programs for youth and adults throughout the year. While some athletic leagues are run internally by the department, additional league opportunities are available to participants through collaborative efforts with local youth sports providers.'
 content_focused: true
@@ -44,4 +44,5 @@ content_block:
     url: '#'
     type: block_item
     enabled: true
+header_infobox: false
 ---

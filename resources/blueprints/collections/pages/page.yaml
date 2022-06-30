@@ -79,6 +79,17 @@ sections:
           icon: section
           listable: hidden
           instructions_position: above
+          width: 75
+      -
+        handle: header_infobox
+        field:
+          default: false
+          display: 'Header InfoBox'
+          type: toggle
+          icon: toggle
+          width: 25
+          listable: hidden
+          instructions_position: above
       -
         handle: hero_cta_heading
         field:
@@ -530,6 +541,48 @@ sections:
           display: 'Content Block'
           type: replicator
           icon: replicator
+          listable: hidden
+          instructions_position: above
+      -
+        handle: freeform_content
+        field:
+          always_show_set_button: false
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+            - h1
+            - h4
+            - h5
+            - h6
+            - underline
+            - strikethrough
+            - superscript
+            - subscript
+            - code
+          container: assets
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: 'Freeform Content'
+          type: bard
+          icon: bard
           listable: hidden
           instructions_position: above
   seo:
